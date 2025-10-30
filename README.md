@@ -140,6 +140,7 @@ object through which all future communication shall be conducted.
 
 ```
   registerStream(
+    connection: Connection,
     name: string,
     type: 'continuous' | 'discrete',
     dataType: 'number' | 'string' | 'boolean'
@@ -155,6 +156,7 @@ can be used to actually publish the samples to the server.
 
 ```
   publish(
+    stream: Stream,
     sample: any
   )
 ```
@@ -165,7 +167,9 @@ This sample can be of any type, but must be (JSON) serialisable.
 ### getAvailableStreams()
 
 ```
-  getAvailableStreams(): Array<Stream>
+  getAvailableStreams(
+    connection: Connection
+  ): Array<Stream>
 ```
 
 Returns a list of streams that are currently available on the server. The
