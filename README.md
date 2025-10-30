@@ -161,3 +161,13 @@ can be used to actually publish the samples to the server.
 
 Publishes a new sample on a registered stream, taking the sample as argument.
 This sample can be of any type, but must be (JSON) serialisable.
+
+### getAvailableStreams()
+
+```
+  getAvailableStreams(): Array<Stream>
+```
+
+Returns a list of streams that are currently available on the server. The
+objects in the list inform the caller about stream type and type of data
+contained within the stream.
