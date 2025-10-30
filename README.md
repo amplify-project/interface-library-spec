@@ -107,3 +107,23 @@ which clients refresh a timestamp at a certain frequency in the device registry
 with which other clients can gauge whether a client is still available. This
 mechanism potentially requires a cleanup process which removes stale clients
 from the registries.
+
+## API
+
+This section defines the API that users of the interface library can program
+against. Every concrete implementation of the interface library should support
+these methods. Method signatures use a Typescript-like syntax for annotating
+types. These signatures are not necessarily authoritative, but act merely as
+pseudocode.
+
+### `connect(host: string, type: 'input' | 'output' | 'io', device_info: any?): Connection`
+
+This function acts as the main entry point for the application. It establishes
+a connection to the Redis server at the host/port identified by the string
+`host`. A device should also register itself as either an `input` device,
+`output` device and general `io` if it can perform both functions. Optionally
+this method also accepts a dictionary-like object containing device
+information. The contents of this object are as of yet unspecified.
+
+The function establishes the connection to the server and returns a `Connection`
+object through which all future communication shall be conducted.
