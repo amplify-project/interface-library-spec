@@ -122,7 +122,7 @@ pseudocode.
   connect(
     host: string,
     type: 'input' | 'output' | 'io',
-    device_info: any?
+    deviceInfo: any?
   ): Connection
 ```
 
@@ -136,10 +136,10 @@ information. The contents of this object are as of yet unspecified.
 The function establishes the connection to the server and returns a `Connection`
 object through which all future communication shall be conducted.
 
-### register_stream()
+### registerStream()
 
 ```
-  register_stream(
+  registerStream(
     name: string,
     type: 'continuous' | 'discrete',
     dataType: 'number' | 'string' | 'boolean'
