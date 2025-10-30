@@ -150,3 +150,14 @@ Registers a new data stream with the Redis server. The caller specifies a name
 for the stream, whether the stream is continuous or discrete and what kind of
 data is contained in the stream. The function returns a `Stream` object which
 can be used to actually publish the samples to the server.
+
+### publish()
+
+```
+  publish(
+    sample: any
+  )
+```
+
+Publishes a new sample on a registered stream, taking the sample as argument.
+This sample can be of any type, but must be (JSON) serialisable.
