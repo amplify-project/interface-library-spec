@@ -1,4 +1,4 @@
-# AMPLIFY Portable High Level Interface Specification
+# AMPLIFY Portable High Level Interface Specification v1.0.0
 
 The core **AMPLIFY Portable** communication backbone is based on a
 network-based publish-subscribe mechanism. This allows every node in the
