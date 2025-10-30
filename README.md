@@ -140,6 +140,17 @@ information. The contents of this object are as of yet unspecified.
 The function establishes the connection to the server and returns a `Connection`
 object through which all future communication shall be conducted.
 
+### close()
+
+```
+  close(
+    connection: Connection
+  )
+```
+
+Closes the given connection to the server. This will also unregister all the
+streams provided by the caller and unsubscribe from all registered streams.
+
 ### registerStream()
 
 ```
