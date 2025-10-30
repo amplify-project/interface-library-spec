@@ -116,6 +116,10 @@ these methods. Method signatures use a Typescript-like syntax for annotating
 types. These signatures are not necessarily authoritative, but act merely as
 pseudocode.
 
+The signatures for these functions assume a procedural implementation. An
+object-oriented implementation can, in general, assume the first parameter to
+be the owner of the given method if it happens to be an object.
+
 ### connect()
 
 ```
