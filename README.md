@@ -156,6 +156,17 @@ for the stream, whether the stream is continuous or discrete and what kind of
 data is contained in the stream. The function returns a `Stream` object which
 can be used to actually publish the samples to the server.
 
+### unregisterStream()
+
+```
+  unregisterStream(
+    stream: Stream,
+  )
+```
+
+Deregisters a stream from the server, indicating that no more messages will be
+published on the stream from this point forward.
+
 ### publish()
 
 ```
