@@ -171,3 +171,26 @@ This sample can be of any type, but must be (JSON) serialisable.
 Returns a list of streams that are currently available on the server. The
 objects in the list inform the caller about stream type and type of data
 contained within the stream.
+
+### subscribe()
+
+```
+  subscribe(
+    stream: Stream,
+    callback: (sample: any) => void
+  )
+```
+
+Subscribes the caller to messages published on the given stream by the server.
+This function accepts a callback, which is invoked every time a sample is
+received with the received sample as argument.
+
+### unsubscribe()
+
+```
+  unsubscribe(
+    stream: Stream
+  )
+```
+
+Unsubscribes the caller from messages published on the given stream.
