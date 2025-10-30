@@ -116,7 +116,15 @@ these methods. Method signatures use a Typescript-like syntax for annotating
 types. These signatures are not necessarily authoritative, but act merely as
 pseudocode.
 
-### `connect(host: string, type: 'input' | 'output' | 'io', device_info: any?): Connection`
+### connect()
+
+```
+  connect(
+    host: string,
+    type: 'input' | 'output' | 'io',
+    device_info: any?
+  ): Connection
+```
 
 This function acts as the main entry point for the application. It establishes
 a connection to the Redis server at the host/port identified by the string
@@ -127,3 +135,18 @@ information. The contents of this object are as of yet unspecified.
 
 The function establishes the connection to the server and returns a `Connection`
 object through which all future communication shall be conducted.
+
+### register_stream()
+
+```
+  register_stream(
+    name: string,
+    type: 'continuous' | 'discrete',
+    dataType: 'number' | 'string' | 'boolean'
+  ): Stream
+```
+
+Registers a new data stream with the Redis server. The caller specifies a name
+for the stream, whether the stream is continuous or discrete and what kind of
+data is contained in the stream. The function returns a `Stream` object which
+can be used to actually publish the samples to the server.
