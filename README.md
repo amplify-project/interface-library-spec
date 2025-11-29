@@ -171,6 +171,7 @@ can be used to actually publish the samples to the server.
 
 ```
   unregisterStream(
+    connection: Connection,
     stream: Stream,
   )
 ```
@@ -195,12 +196,24 @@ This sample can be of any type, but must be (JSON) serialisable.
 ```
   getAvailableStreams(
     connection: Connection
-  ): Array<Stream>
+  ): Dictionary<string, Stream>
 ```
 
-Returns a list of streams that are currently available on the server. The
-objects in the list inform the caller about stream type and type of data
-contained within the stream.
+Returns a dictionary of with streams names as keys and streams as values, that
+are currently available on the server. The objects in the dictionary inform the
+caller about stream type and type of data contained within the stream.
+
+### getStream()
+
+```
+  getStream(
+    connection: Connection,
+    streamName: string
+  ): Stream
+```
+
+Returns a stream with the given name from the server and returns a Stream
+object if the stream exists
 
 ### subscribe()
 
